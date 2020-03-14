@@ -8,7 +8,6 @@ const app = express();
 Sentry.init({
   dsn: "https://a568b8b1301a422f92529ee465db8f33@sentry.io/4626043",
   release: `hb_backend@${process.env.npm_package_version}`,
-  attachStacktrace: true,
   debug: true
 });
 
