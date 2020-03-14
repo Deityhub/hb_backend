@@ -75,7 +75,7 @@ yarn start
 ### Swagger Documentation
 
 - Request Method: GET
-- URL: [https://localhost:3000](http://localhost:3000)
+- URL: [http://localhost:3000](http://localhost:3000)
 
 > Once your server is running, the url above is where the documentation on how to use the api endpoints resides, you can also run your test there without using postman
 
