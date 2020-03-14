@@ -14,6 +14,10 @@ To have a local copy of this project, you can:
 
 - Clone the repository by using git clone command, or the download zip alternative provided on github
 
+```
+git clone https://github.com/Deityhub/hb_backend.git
+```
+
 To run the cloned version locally, `cd` into the root folder and run
 
 ```
@@ -68,59 +72,41 @@ or
 yarn start
 ```
 
+### Swagger Documentation
+
+- Request Method: GET
+- URL: [https://localhost:3000](http://localhost:3000)
+
+> Once your server is running, the url above is where the documentation on how to use the api endpoints resides, you can also run your test there without using postman
+
 ### Login
 
 - Request Method: POST
-- URL: https://localhost:3000/api/v1/login
+- URL: [http://localhost:3000/api/v1/login](http://localhost:3000/api/v1/login)
 
 Request body should contain username and password; the API will return a token for the user which will be used for future requests to the server.
 
-- Sample Request: {
-  "username": "any name",
-  "password": "any password"
-  }
-- Sample Response: {
-  "status": "Success",
-  "data": {
-  "token": "\<token\>"
-  } }
+- Sample Request: `{ "username": "any name", "password": "any password" }`
+- Sample Response: `{ "status": "Success", "data": { "token": "\<token\>" } }`
 
 > Any username/password combination is accepted, since this it just a mock authentication service
 
 ### JSON Patch
 
 - Request Method: PATCH
-- URL: http://localhost:3000/api/v1/json
+- URL: [http://localhost:3000/api/v1/json](http://localhost:3000/api/v1/json)
 
 > This endpoint accepts two parameters (document and patch) which are JSON objects.
 
-- Sample Request: {
-  "document": {
-  "baz": "qux",
-  "foo": "bar"
-  },
-  "patch": [
-  {
-  "op": "replace",
-  "path": "/baz",
-  "value": "eke"
-  }
-  ]
-  }
-- Sample Response: {
-  "success": true,
-  "data": {
-  "baz": "eke",
-  "foo": "bar"
-  }
-  }
+- Sample Request: `{ "document": { "baz": "qux", "foo": "bar" }, "patch": [ { "op": "replace", "path": "/baz", "value": "eke" } ] }`
+- Sample Response: `{ "success": true, "data": { "baz": "eke", "foo": "bar" } }`
 
 > The **jwt token** required for authentication can be passed in the request headers [Authorization: Bearer \<token\>], request body [ { req.body.token: \<token\> } ] or request query [ ?token=\<token\> ]
 
 ### Thumbnail Generation
 
 - Request Method: GET
-- URL: https://localhost:3000/api/v1/thumbnail?url=imageurl
+- URL: [http://localhost:3000/api/v1/thumbnail?url=imageurl](http://localhost:3000/api/v1/thumbnail?url=imageurl)
 
 This endpoint accepts an image url, generates a 50x50 thumbnail image and returns it to the user.
 
